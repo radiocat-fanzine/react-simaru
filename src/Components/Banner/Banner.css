@@ -1,0 +1,28 @@
+.banner {
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    background-image: url("/assets/img/bground/S-kork-25.jpg");
+}
+
+.banner-container {
+    text-align: center;
+    padding: 15% 0;
+}
+
+.banner h1 {
+    margin: 0;
+    color: green;
+    text-shadow: .0625rem .0625rem .1875rem rgba(0, 0, 0, 0.2);
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.banner p {
+    font-size: 1.875rem;
+    color: green;
+    opacity: 0.7;
+    text-shadow: .0625rem .0625rem .1875rem rgba(0, 0, 0, 0.2);
+
+}
+
