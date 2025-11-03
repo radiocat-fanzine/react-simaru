@@ -9,7 +9,6 @@ const products = [
         category: 'bags',
         material: 'cork'
     },
-
     {
         id: 2,
         title: 'Paco Cork Backpack',
@@ -20,7 +19,6 @@ const products = [
         category: 'bags',
         material: 'cork'
     },
-
     {
         id: 3,
         title: 'Maja Cork Wallet',
@@ -31,7 +29,6 @@ const products = [
         category: 'wallets',
         material: 'cork'
     },
-
     {
         id: 4,
         title: 'Joel Cork Wallet',
@@ -42,7 +39,6 @@ const products = [
         category: 'wallets',
         material: 'cork'
     },
-
     {
         id: 5,
         title: 'Maila Cork Wallet',
@@ -53,7 +49,6 @@ const products = [
         category: 'wallets',
         material: 'cork'
     },
-
     {
         id: 6,
         title: 'Maila Cork Wallet Black',
@@ -64,7 +59,6 @@ const products = [
         category: 'wallets',
         material: 'cork'
     },
-
     {
         id: 7,
         title: 'Mael (Worldmap) Cork Wallet',
@@ -75,7 +69,6 @@ const products = [
         category: 'wallets',
         material: 'cork'
     },
-
     {
         id: 8,
         title: 'Yona Mini Cork Wallet',
@@ -86,7 +79,6 @@ const products = [
         category: 'wallets',
         material: 'cork'
     },
-
     {
         id: 9,
         title: 'Napoli Mini Cork Coin Purse',
@@ -97,7 +89,6 @@ const products = [
         category: 'wallets',
         material: 'cork'
     },
-
     {
         id: 10,
         title: 'Beja Tobacco Pouch Gray',
@@ -108,7 +99,6 @@ const products = [
         category: 'tobacco pouches',
         material: 'leather'
     },
-
     {
         id: 11,
         title: 'Beja Tobacco Pouch Panama',
@@ -119,7 +109,6 @@ const products = [
         category: 'tobacco pouches',
         material: 'leather'
     },
-
     {
         id: 12,
         title: 'Beja Tobacco Pouch Black',
@@ -130,7 +119,6 @@ const products = [
         category: 'tobacco pouches',
         material: 'leather'
     },
-
     {
         id: 13,
         title: 'Beja Tobacco Pouch Brown',
@@ -141,7 +129,6 @@ const products = [
         category: 'tobacco pouches',
         material: 'leather'
     },
-
     {
         id: 14,
         title: 'Madeira Cork Tobacco Pouch',
@@ -152,7 +139,6 @@ const products = [
         category: 'tobacco pouches',
         material: 'cork'
     },
-
     {
         id: 15,
         title: 'Chimoio Leather Bracelet',
@@ -163,7 +149,6 @@ const products = [
         category: 'bracelets',
         material: 'leather'
     },
-
     {
         id: 16,
         title: 'Merano Leather Bracelet',
@@ -174,7 +159,6 @@ const products = [
         category: 'bracelets',
         material: 'leather'
     },
-
     {
         id: 17,
         title: 'Leather Bracelet with adjustable rivets',
@@ -185,7 +169,6 @@ const products = [
         category: 'bracelets',
         material: 'leather'
     },
-
     {
         id: 18,
         title: 'Arequipa Leather Bracelet',
@@ -196,7 +179,6 @@ const products = [
         category: 'bracelets',
         material: 'leather'
     },
-
     {
         id: 19,
         title: 'Curitiba Cork Belt',
@@ -207,7 +189,6 @@ const products = [
         category: 'belts',
         material: 'cork'
     },
-
     {
         id: 20,
         title: 'Curitiba Cork Belt',
@@ -218,5 +199,6 @@ const products = [
         category: 'belts',
         material: 'cork'
     },
+];
 
-]
+export default products;
