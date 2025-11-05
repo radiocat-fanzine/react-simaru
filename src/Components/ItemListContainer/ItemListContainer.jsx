@@ -16,7 +16,7 @@ export default function ItemListContainer( props ) {
 
         if (categParam){
             getProductsByCateg(categParam)
-            .then (productsByCateg) => setProducts(productsByCateg)
+            .then (productsByCateg => setProducts(productsByCateg))
             .catch (error => alert(error))
             .finally ( () => setIsLoading(false))
         }
