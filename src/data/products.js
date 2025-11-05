@@ -6,7 +6,7 @@ const products = [
         description: 'Water-repellent & robust: vegan cork and lightweight Oxford fabric. Additional zip compartment inside. Adjustable straps & cork carrying handle. Dimensions: 40 cm x 35 cm x 11 cm. Volume: up to 15 litres',
         price: 89.90,
         stock: 50,
-        category: 'bags',
+        category: 'bags-pouches',
         material: 'cork'
     },
     {
@@ -16,7 +16,7 @@ const products = [
         description: 'Water-repellent & robust: vegan cork and lightweight Oxford fabric. 2 compartments inside & 2 compartments outside. Machine washable at 30 degrees. Dimensions: 41 cm x 30 cm x 12 cm. Volume: up to 14 litres',
         price: 129.90,
         stock: 50,
-        category: 'bags',
+        category: 'bags-pouches',
         material: 'cork'
     },
     {
@@ -96,7 +96,7 @@ const products = [
         description: 'Best Italian leather. Practical magnetic closure. Additional interchangeable closure straps. Paper holder for double packs. Extra compartment for filters. Dimensions: 16cm x 9cm x 2cm (WxHxD)Large main compartment & 2 compartments for notes & cards. 1 zippered compartment for coins. Snap closure with magnet. Vegan & durable cork. Dimensions when closed: 5.5in x 3.5in x 0.6in (LxWxH)',
         price: 29.99,
         stock: 60,
-        category: 'tobacco pouches',
+        category: 'bags-pouches',
         material: 'leather'
     },
     {
@@ -106,7 +106,7 @@ const products = [
         description: 'Best Italian leather. Practical magnetic closure. Additional interchangeable closure straps. Paper holder for double packs. Extra compartment for filters. Dimensions: 16cm x 9cm x 2cm (WxHxD)Large main compartment & 2 compartments for notes & cards. 1 zippered compartment for coins. Snap closure with magnet. Vegan & durable cork. Dimensions when closed: 5.5in x 3.5in x 0.6in (LxWxH)',
         price: 29.99,
         stock: 60,
-        category: 'tobacco pouches',
+        category: 'bags-pouches',
         material: 'leather'
     },
     {
@@ -116,7 +116,7 @@ const products = [
         description: 'Best Italian leather. Practical magnetic closure. Additional interchangeable closure straps. Paper holder for double packs. Extra compartment for filters. Dimensions: 16cm x 9cm x 2cm (WxHxD)Large main compartment & 2 compartments for notes & cards. 1 zippered compartment for coins. Snap closure with magnet. Vegan & durable cork. Dimensions when closed: 5.5in x 3.5in x 0.6in (LxWxH)',
         price: 29.99,
         stock: 60,
-        category: 'tobacco pouches',
+        category: 'bags-pouches',
         material: 'leather'
     },
     {
@@ -126,7 +126,7 @@ const products = [
         description: 'Best Italian leather. Practical magnetic closure. Additional interchangeable closure straps. Paper holder for double packs. Extra compartment for filters. Dimensions: 16cm x 9cm x 2cm (WxHxD)Large main compartment & 2 compartments for notes & cards. 1 zippered compartment for coins. Snap closure with magnet. Vegan & durable cork. Dimensions when closed: 5.5in x 3.5in x 0.6in (LxWxH)',
         price: 29.99,
         stock: 60,
-        category: 'tobacco pouches',
+        category: 'bags-pouches',
         material: 'leather'
     },
     {
@@ -136,7 +136,7 @@ const products = [
         description: 'Zippered compartment for filters. Paper holder for double packs. Extra compartment for lighter. Practical closure strap. Compact & lightweight: 15.5cm x 8cm x 1cm - 40g',
         price: 35.99,
         stock: 60,
-        category: 'tobacco pouches',
+        category: 'bags-pouches',
         material: 'cork'
     },
     {

@@ -1,12 +1,39 @@
+import CartWidget from "./CartWidget"
 import "./Navbar.css"
-const NavBar = () => {
+function NavBar() {
   return (
-    <div className="nav-container">
-        <nav className="navbar">
-            <h1 className="navbar-logo">Simaru.de</h1>
-            <h2 className="navbar-cart">🛒</h2>
-        </nav>
-    </div>
+    <nav className="nav-menu">
+      <Link to="/">
+      <span className="nav-logo">Simaru.de</span>
+      </Link>
+      <ul className="nav-links">
+        <li>
+          <link to="/category/wallets">
+            Wallets
+          </link>
+        </li>
+        <li>
+          <link to="/category/bracelets">
+            Bracelets
+          </link>
+        </li>
+        <li>
+          <link to="/category/bags-pouches">
+            Bags & Pouches
+          </link>
+        </li>
+        <li>
+          <link to="/category/belts">
+            Belts
+          </link>
+        </li>
+      </ul>
+      <link to ="/cart">
+      <span> <CartWidget/> </span>
+      </link>
+
+    </nav>
+
   )
 }
 
