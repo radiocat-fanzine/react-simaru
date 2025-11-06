@@ -26,6 +26,7 @@ export default function ItemListContainer( props ) {
                 setProducts(productList);
             })
             .catch ( (error) => {
+                console.log(error);
                 alert("Something went wrong while looking for products :(")
             })
             .finally( () => {
