@@ -10,7 +10,7 @@ function NavBar() {
   return (
     <nav className="nav-menu">
       <Link to="/" className="nav-logo">
-        <img src="imgs/logo.png" alt="Simaru Logo" />
+        <img className="logo-image" src="./imgs/logo.png" alt="Simaru Logo" />
       </Link>
 
       <div className="navbar-search">

@@ -48,3 +48,8 @@
     border-radius: 50%;
 }
 
+.logo-image {
+    height: 3rem;
+    width: auto;
+    display: block;
+}
