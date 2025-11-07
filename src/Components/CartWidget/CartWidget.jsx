@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { cartContext } from "../../context/cartContext";
+import CartContext from "../../context/CartContext.jsx";
 import { ShoppingCart } from "lucide-react";
 import "./CartWidget.css";
 
 export default function CartWidget() {
-    const { countItems } = useContext(cartContext);
+    const { countItems } = useContext(CartContext);
     const totalItems = countItems();
 
     return (

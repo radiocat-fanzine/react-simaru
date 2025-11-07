@@ -1,4 +1,4 @@
-import { SearchContext } from "../../context/searchContext";
+import SearchContext from "../../context/SearchContext";
 import Item from "../Item/Item";
 import { getProducts, getProductsByCateg } from "../../data/firebase";
 import { useContext, useState, useEffect } from "react"; 

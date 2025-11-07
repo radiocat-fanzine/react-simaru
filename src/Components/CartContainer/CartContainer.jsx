@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import cartContext from "../../context/cartContext";
+import CartContext from "../../context/CartContext.jsx";
 import { createOrder } from "../../data/firebase";
 import FormCheckout from "./FormCheckout.jsx";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 function CartContainer() {
-    const { cartItems, removeItem, clearCart, calculateTotalPrice } = useContext(cartContext);
+    const { cartItems, removeItem, clearCart, calculateTotalPrice } = useContext(CartContext);
 
     // Calcular total del carrito
     const totalPrice = calculateTotalPrice();

@@ -3,8 +3,8 @@ import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailCont
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
 import NavBar from './Components/Navbar/Navbar'
 import { BrowserRouter, Routes, Route } from 'react-router'
-import { CartProvider } from './context/cartContext'
-import { SearchProvider } from './context/searchContext'
+import { CartProvider } from './context/CartContext'
+import { SearchProvider } from './context/SearchContext'
 import CartContainer from './Components/CartContainer/CartContainer'
 import app, { getProducts } from './data/firebase'
 

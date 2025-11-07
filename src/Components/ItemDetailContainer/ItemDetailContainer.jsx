@@ -1,8 +1,8 @@
 import StateComponent from "../ColorPick/StateComponent"
 import { useParams } from "react-router"
-import { getProductsById } from "../../data/firebase";
+import { getProductById } from "../../data/firebase";
 import { useEffect, useState, useContext } from "react";
-import cartContext from "../../context/cartContext";
+import CartContext from "../../context/CartContext";
 
 
 // Funcion para definir estructura del item card con descripcion
@@ -10,7 +10,7 @@ import cartContext from "../../context/cartContext";
 function ItemDetailContainer() {
     const { idParam } = useParams();
     const [product, setProduct] = useState( {loading: true} );
-    const context = useContext(cartContext);
+    const context = useContext(CartContext);
 
     useEffect ( () => {
         getProductById(idParam)
