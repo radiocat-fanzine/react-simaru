@@ -2,10 +2,10 @@ import StateComponent from "../ColorPick/StateComponent"
 import { useParams } from "react-router"
 import { getProductById } from "../../data/firebase";
 import { useEffect, useState, useContext } from "react";
-import CartContext from "../../context/CartContext";
+import { CartContext } from "../../context/CartContext";
 
 
-// Funcion pargita definir estructura del item card con descripcion
+// Funcion para definir estructura del item card con descripcion
 
 function ItemDetailContainer() {
     const { idParam } = useParams();

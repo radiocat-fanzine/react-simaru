@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from "react";
 
 //Creacion del contexto del cart
 
-const CartContext = createContext();
+export const CartContext = createContext();
 
 //Componente proveedor que envuelve a la app
 
@@ -90,5 +90,4 @@ export function CartProvider(props) {
     );
 }
 
-export default CartContext;
 

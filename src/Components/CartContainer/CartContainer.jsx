@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import CartContext from "../../context/CartContext.jsx";
+import { CartContext } from "../../context/CartContext.jsx";
 import { createOrder } from "../../data/firebase";
 import FormCheckout from "./FormCheckout.jsx";
 import Swal from "sweetalert2";
