@@ -1,6 +1,6 @@
 import products from './products'
 
-function getMockAPIData(){
+export function getProducts(){
     const promiseProducts = new Promise ( (resolve) => {
         setTimeout( () => {
             resolve(products)
@@ -38,5 +38,3 @@ export function getProductsByCategory( categRequested ){
     })
 }
 
-
-export default getMockAPIData;
