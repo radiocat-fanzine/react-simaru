@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { SearchContext } from "../../context/searchContext";
 import CartWidget from "../CartWidget/CartWidget";
-import "./NavBar.css";
+import "./Navbar.css";
 
 function NavBar() {
   const { searchQuery, setSearchQuery } = useContext(SearchContext);
