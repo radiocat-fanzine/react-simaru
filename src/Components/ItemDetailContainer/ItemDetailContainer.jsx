@@ -5,7 +5,7 @@ import { useEffect, useState, useContext } from "react";
 import CartContext from "../../context/CartContext";
 
 
-// Funcion para definir estructura del item card con descripcion
+// Funcion pargita definir estructura del item card con descripcion
 
 function ItemDetailContainer() {
     const { idParam } = useParams();
