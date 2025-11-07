@@ -7,12 +7,79 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-.navbar {
+.navbar-top-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 1.5rem; 
+    height: 4.375rem
+}
+.navbar-bottom-row {
+    display: flex;
+    justify-content: center; 
+    padding: .625rem 1.5rem;
+}
+
+.nav-right-group {
+    display: flex; 
     align-items: center;
-    height: 70px;
-    padding: 0 1.5rem;
+    gap: .9375rem;
+    flex-grow: 1;
+    justify-content: flex-end; 
+}
+
+.navbar-search-wrapper {
+    max-width: 25rem;
+    width: 100%;
+}
+
+.navbar-search {
+    display: flex;
+    align-items: center;
+    width: 100%; 
+    border: 1px solid var(--clr-border); 
+    border-radius: var(--radius, 8px);
+    background-color: var(--clr-bg-alt);
+    padding: 0; 
+    overflow: hidden;
+    transition: var(--transition, border-color 0.2s);
+}
+
+.navbar-search:focus-within {
+    border-color: var(--clr-accent); 
+    box-shadow: 0 0 0 2px rgba(var(--clr-accent-rgb), 0.25);
+}
+
+.search-icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem; 
+    color: var(--clr-primary-dark);
+    padding: 0 10px;
+    height: 100%;
+    transition: var(--transition, color 0.2s);
+}
+
+.search-icon-button:hover {
+    color: var(--clr-accent);
+}
+
+.navbar-search input {
+    border: none;
+    outline: none; 
+    flex-grow: 1;
+    width: 100%;
+    padding: .5rem .75rem .5rem 0; 
+    font-size: 1rem;
+    color: var(--clr-text);
+    background-color: transparent; 
+}
+
+.logo-image {
+    height: 3rem;
+    width: auto;
+    display: block;
 }
 
 .navbar-logo {
@@ -21,12 +88,21 @@
     font-weight: bold;
 }
 
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem; 
+}
+
 .navbar a {
     color: var(--clr-text);
     font-weight: 500;
     text-decoration: none;
     margin: 0 1rem;
 }
+
 .navbar a:hover {
     color: var(--clr-accent);
 }
@@ -46,18 +122,4 @@
     height: 10px;
     background: var(--clr-accent);
     border-radius: 50%;
-}
-
-.logo-image {
-    height: 3rem;
-    width: auto;
-    display: block;
-}
-
-.nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 1.5rem; 
 }
