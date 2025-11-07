@@ -1,12 +1,15 @@
 .item-card {
+  background-color: var(--clr-bg-alt);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
   text-align: center;
-  background-color: var(--b-bg-1);
-  border: 1px solid #85a498;
-  border-radius: 0.5rem;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  width: 360px;
+  width: 300px;
+  transition: var(--transition);
+}
+.item-card:hover {
+  transform: translateY(-3px);
 }
 
 .item-card-img {
@@ -17,44 +20,28 @@
 
 .item-card-content {
   padding: 1rem;
-  flex-grow: 1;
-  font-size: 0.825rem;
-  display: flex;
-  flex-direction: column;
 }
 
 .item-card-title {
   font-size: 1.15rem;
-  font-weight: 600;
-  letter-spacing: 0.075rem;
-  text-transform: uppercase;
-  margin: 0.5rem 0 1.5rem 0;
+  font-weight: bold;
+  color: var(--clr-primary-dark);
+  margin-bottom: 0.5rem;
 }
 
 .item-card-price {
-  font-size: 1.45rem;
-  color: var(--b-link);
+  font-size: 1.2rem;
+  color: var(--clr-accent);
   margin-bottom: 1rem;
 }
 
-.item-card-buttons{ 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-.item-card-footer{
-  font-size: 11px;
-  color: rgba(255,255,255,0.45);
-  margin-top: 0.25rem;
-}
-
 .item-card button {
-  background-color: var(--b-btn-bg);
-  color: var(--b-btn-txt);
-  border: none;
-  border-radius: 0.25rem;
+  background-color: var(--clr-primary);
+  color: var(--clr-bg-alt);
+  font-weight: 600;
   padding: 0.5rem 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  border-radius: var(--radius);
+}
+.item-card button:hover {
+  background-color: var(--clr-primary-dark);
 }

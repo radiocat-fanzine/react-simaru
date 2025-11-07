@@ -1,23 +1,32 @@
 import './App.css'
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer'
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
 import NavBar from './Components/Navbar/Navbar'
 import { BrowserRouter, Routes, Route } from 'react-router'
-import app from "../data/firebase"
-import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer'
+import { CartProvider } from './context/cartContext'
+import { SearchProvider } from './context/searchContext'
+import CartContainer from './Components/CartContainer/CartContainer'
+import app, { getProducts } from './data/firebase'
 
 
 export default function App() {
-  const [ page, setPage ] = useState ("home")
+  getProducts();
+
   return (
-    <BrowserRouter>
-      <NavBar/>
-      <Routes>
-        <Route path='/' element={ <ItemListContainer greeting ="Welcome to Simaru!🍃" /> }/>
-        <Route path='/category/:categParam' element={<ItemListContainer/>} />
-        <Route path='/detail/:idParam' element={ <ItemDetailContainer/>} />
-        <Route path='/*' element={ <h1>404: Page not found</h1> } />
-        <ItemListContainer/>
-      </Routes>
-    </BrowserRouter>)
+    <CartProvider>
+      <SearchProvider>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={< ItemListContainer greeting="Welcome to Simaru!🍃" />} />
+            <Route path='/category/:categParam' element={< ItemListContainer />} />
+            <Route path='/detail/:idParam' element={< ItemDetailContainer />} />
+            <Route path='/cart' element={< CartContainer />} />
+            <Route path='/*' element={<h1>404: Page not found</h1>} />
+          </Routes>
+        </BrowserRouter>
+      </SearchProvider>
+    </CartProvider>
+  )
 }
 
