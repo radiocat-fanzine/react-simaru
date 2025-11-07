@@ -13,7 +13,7 @@ function ItemDetailContainer() {
     const context = useContext(cartContext);
 
     useEffect ( () => {
-        getProductsById(idParam)
+        getProductById(idParam)
         .then( response => setProduct(response))
         .catch( error => alert(error))
     }, [])
