@@ -41,6 +41,7 @@ function CartContainer() {
         });
     }
 
+    //Apariencia de Carrito de compras: Item con nombre, foto, cantidad + botones agregar y restar y precio total
     return (
         <div className="cart-container">
         <h3>Your Items</h3>
@@ -53,7 +54,11 @@ function CartContainer() {
                     <div key={item.id} className="cart-item">
                         <img width="100" src={item.imgURL} alt={item.title} />
                         <h4>{item.title}</h4>
-                        <p>Units: {item.count}</p>
+                        <div className="item-count-buttons">
+                            <button onClick={() => removeItem(item.id)}>-</button>
+                            <span>{item.count}</span>
+                            <button onClick={() => addToCart(item)}>+</button>
+                        </div>
                         <p>€ {item.price * item.count}</p>
                         <button onClick={() => removeItem(item.id)}>Remove</button>
                     </div>
