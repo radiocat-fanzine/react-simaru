@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import cartContext from "../../context/cartContext";
 import { createOrder } from "../../data/firebase";
-import { FormCheckout } from "./FormCheckout.jsx";
+import FormCheckout from "./FormCheckout.jsx";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
