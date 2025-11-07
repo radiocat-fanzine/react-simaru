@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import SearchContext from "../../context/SearchContext";
+import { SearchContext } from "../../context/SearchContext";
 import CartWidget from "../CartWidget/CartWidget";
 import "./Navbar.css";
 
