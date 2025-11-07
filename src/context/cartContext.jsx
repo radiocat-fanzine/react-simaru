@@ -84,9 +84,9 @@ export function CartProvider(props) {
     }
 
     return (
-        <cartContext.Provider value={ {cartItems, addToCart, removeItemComplete, countItems, removeItem, calculateTotalPrice, clearCart,} }>
+        <CartContextartContext.Provider value={ {cartItems, addToCart, removeItemComplete, countItems, removeItem, calculateTotalPrice, clearCart,} }>
             { props.children }
-        </cartContext.Provider>
+        </CartContextartContext.Provider>
     );
 }
 
