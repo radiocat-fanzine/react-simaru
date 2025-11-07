@@ -53,3 +53,11 @@
     width: auto;
     display: block;
 }
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem; 
+}

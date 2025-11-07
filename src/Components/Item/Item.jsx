@@ -17,9 +17,9 @@ function Item ( {id, title, imgURL, price}) {
             <h3 className="item-card-price">Price: € {price} </h3>
             <StateComponent/>
             <div style={{ textAlign: "center"}}>
-                <link to= {`/detail/${id}`}>
+                <Link to= {`/detail/${id}`}>
                     <button>See more</button>
-                </link>
+                </Link>
             </div>
         </div>
     )
