@@ -6,11 +6,9 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import { CartProvider } from './context/CartContext'
 import { SearchProvider } from './context/SearchContext'
 import CartContainer from './Components/CartContainer/CartContainer'
-import app, { getProducts } from './data/firebase'
 
 
 export default function App() {
-  getProducts();
 
   return (
     <CartProvider>
