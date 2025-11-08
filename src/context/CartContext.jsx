@@ -21,40 +21,40 @@ export function CartProvider(props) {
 
     //Funcion para agregar productos al carrito de compra
 
-    function addToCart(newItem){
-        const newCartItems = structuredClone(cartItems);
-        const isInCart = cartItems.some( item => item.id === newItem.id)
-        
+    function addToCart(newItem) {
+        const isInCart = cartItems.find(item => item.id === newItem.id); 
+
         if (isInCart) {
-            const index = cartItems.findIndex( item => item.id === newItem.id);
-            newCartItems[index].count = newCartItems[index].count + 1
+            const updatedCart = cartItems.map(item =>
+                item.id === newItem.id
+                    ? { ...item, count: item.count + 1 }
+                    : item
+            );
+            setCartItems(updatedCart);
+        } else {
+            setCartItems([...cartItems, { ...newItem, count: 1 }]);
         }
-        else{
-            newCartItems.push( { ...newItem, count:1});
-        }
-        
-        setCartItems(newCartItems)
         alert(`You successfully added ${newItem.title} to your cart`);
     }
 
     //Funcion para quitar una unidad de un producto (o eliminar si queda 1)
-    function removeItem(idRemove){
-        let newCartItems= structuredClone(cartItems)
-        const isInCart = cartItems.find ( (item) => item.id === idRemove);
+    function removeItem(idRemove) {
+    const isInCart = cartItems.find((item) => item.id === idRemove);
 
-        if(!isInCart) return; //Asegura que el producto este, antes de continuar
+    if (!isInCart) return;
 
-        const countInCart  = isInCart.count;
-            if(countInCart > 1){
-                const index = cartItems.findIndex( (item) => item.id === idRemove);
-                newCartItems[index].count = newCartItems[index].count -1;
-            }
-            else {
-                newCartItems = cartItems.filter((item) => item.id !== idRemove);
-            }
-
-            setCartItems(newCartItems);
+    if (isInCart.count > 1) {
+        const updatedCart = cartItems.map(item =>
+            item.id === idRemove
+                ? { ...item, count: item.count - 1 }
+                : item 
+        );
+        setCartItems(updatedCart);
+    } else {
+        const newCartItems = cartItems.filter((item) => item.id !== idRemove);
+        setCartItems(newCartItems);
     }
+}
 
 
     //Funcion para eliminar un producto completamente del carrito de compra

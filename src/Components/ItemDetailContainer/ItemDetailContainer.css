@@ -1,14 +1,19 @@
 .item-detail-view {
     display: flex;
+    flex-direction: column;
+    gap: 2.5rem; 
+    padding: 1.25rem;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin: 0 auto;
     justify-content: center; 
-    padding: 3rem 0;
-    width: 100%;
+    max-width: 70rem;
 }
 
 .detail-content-wrapper {
     display: flex;
-    gap: 4rem;
-    width: 90%;
+    gap: 2.5rem;
+    width: 100%;
     max-width: 1200px;
     background-color: var(--clr-bg-alt);
     border-radius: var(--radius);
@@ -17,9 +22,9 @@
 }
 
 .detail-image-column {
-    flex: 1;
-    max-width: 50%;
-    text-align: center;
+    flex: 2;
+    max-width: 70%;
+    text-align: left;
 }
 
 .detail-main-img {
@@ -31,15 +36,25 @@
 
 .detail-info-column {
     flex: 1;
+    max-height: 80vh;
+    overflow-y: scroll;
+    min-width: 18.75rem;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1rem;
+    text-align: left;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.detail-info-column::-webkit-scrollbar {
+    display: none;
 }
 
 .price-large {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    color: var(--clr-primary-dark);
+    color: var(--clr-text);
     margin: 0;
 }
 
@@ -51,6 +66,8 @@
 
 .rating-stars span {
     margin-right: 2px;
+    font-size: clamp(1.5rem, 2vw, 2.2rem);
+    color: gold;
 }
 
 .service-messages {
@@ -76,9 +93,24 @@
     margin-top: '0.5rem';
 }
 
+.origin-message {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: 1.5rem;
+}
+
 .eu-flag{
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.detail-category-material{
+    font-size: clamp(.75rem, 1.5vw, 1rem);
+}
+
+.detail-info-column h2.item-card-title {
+    font-size: clamp(1.25rem, 4vw, 2rem);
 }
 
 

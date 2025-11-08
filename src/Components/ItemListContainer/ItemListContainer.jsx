@@ -60,7 +60,9 @@ export default function ItemListContainer( props ) {
                 ) : (
                     <div className="item-list" >
                         {filteredProducts.length > 0 ? (
-                            filteredProducts.map (item => <Item key= { item.id } {...item} /> )
+                            filteredProducts.map(item => (
+                                < Item key={item.id} product={item} />
+                            ))
                         ) : (
                             <p className="no-results">No products found.</p>
                         )}

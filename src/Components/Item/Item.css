@@ -3,13 +3,14 @@
   border: 1px solid var(--clr-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  text-align: center;
   overflow: hidden;
   width: 300px;
   padding: 1rem; 
   display: flex;
   flex-direction: column; 
-  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+  gap: 0.25rem;
   transition: var(--transition);
 }
 .item-card:hover {
@@ -17,9 +18,9 @@
 }
 
 .item-card-img {
-  width: 100%;
+  width: 200px;
   height: 200px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .item-card-content {
@@ -27,10 +28,18 @@
 }
 
 .item-card-title {
-  font-size: 1.15rem;
+  font-size: clamp(1.05rem, 4vw, 1.15rem);
   font-weight: bold;
   color: var(--clr-primary-dark);
   margin-bottom: 0.5rem;
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis; 
+  line-height: 1.4em; 
+  max-height: 1.4em;
 }
 
 .item-card-price {
@@ -40,12 +49,29 @@
 }
 
 .item-card button {
-  background-color: var(--clr-primary);
-  color: var(--clr-bg-alt);
   font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: var(--radius);
+  transition: var(--transition);
 }
-.item-card button:hover {
-  background-color: var(--clr-primary-dark);
+
+.item-card-actions {
+  display: flex;
+  justify-content: space-between; 
+  gap: 0.5rem; 
+  width: 100%; 
+  padding: 0 0 0.5rem 0; 
+}
+
+.item-card-actions .flex-item {
+    flex-grow: 1;
+}
+
+.see-more-link button {
+    width: 100%; 
+    margin: 0; 
+}
+
+.see-more-btn {
+  flex-grow: 1; 
 }

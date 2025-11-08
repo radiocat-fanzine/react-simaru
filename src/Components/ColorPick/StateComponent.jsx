@@ -14,6 +14,7 @@ export default function StateComponent (){
         <div className="box-container">
             <p>Choose Your Hue:
             </p>
+            <hr />
             <div className="color-picker-container">
                 <button className="color-button" 
                     style={{ backgroundColor: COLORS.BLACK }}

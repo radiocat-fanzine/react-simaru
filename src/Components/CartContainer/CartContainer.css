@@ -18,36 +18,120 @@
     padding-top: 1rem;
 }
 
-.cart-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--clr-border);
-    padding: 0.75rem 0;
-}
-
 .cart-item img {
     border-radius: 8px;
 }
 
-.cart-item h4 {
-    color: var(--clr-text);
-    font-weight: 600;
+.remove-item-btn {
+    padding: 0.5rem; 
+    width: 2.5rem; 
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: var(--clr-danger); 
+    border: none;
 }
 
-.cart-item button {
-    background-color: var(--clr-accent);
-    color: var(--clr-text);
-    padding: 0.4rem 0.8rem;
+.remove-item-btn:hover {
+    background-color: rgba(var(--clr-danger-rgb), 0.1); 
 }
-.cart-item button:hover {
+
+.item-count-buttons button {
+    padding: 0.3rem 0.5rem;; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-border); 
+    color: var(--clr-text);
+    border: none;
+}
+
+.item-count-buttons button:hover {
     background-color: var(--clr-primary);
     color: var(--clr-bg-alt);
 }
 
-.cart-container h4 {
-    margin-top: 1.5rem;
+/*Estilos para encabezado */
+
+.cart-header,
+.cart-item {
+    display: grid;
+    grid-template-columns: 120px 4.5fr 0.5fr; 
+    align-items: center;
+    padding: 0.75rem 0;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--clr-border);
+}
+
+.cart-item {
+    border-bottom: 1px solid var(--clr-border-light);
+}
+
+.cart-info-header,
+.cart-item-info {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1fr;
+    align-items: center;
+    height: 100%;
+    gap: 1rem;
+}
+
+.cart-info-header span {
+    font-weight: bold;
+    color: var(--clr-text);
+}
+
+.cart-info-header .header-col-product {
+    text-align: left;
+}
+
+.cart-info-header .header-col-units,
+.cart-info-header .header-col-price {
+    text-align: center; 
+}
+
+.cart-header span:nth-child(1) {
+    visibility: hidden; 
+}
+
+.cart-item-info h4 {
+    text-align: left; 
     color: var(--clr-primary-dark);
+    font-weight: 600;
+}
+
+.cart-item-info p {
+    text-align: center;
+}
+
+.cart-item-info .item-count-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.cart-total-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+    border-top: 2px solid var(--clr-primary);
+}
+
+.cart-total-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--clr-text);
+}
+
+.cart-total-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--clr-primary-dark); 
 }
 
 /* Estilos para FormCheckout.jsx */

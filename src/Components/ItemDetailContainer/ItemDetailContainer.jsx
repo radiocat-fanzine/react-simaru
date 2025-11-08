@@ -54,12 +54,10 @@ function ItemDetailContainer() {
                     <h4 className="detail-category-material">
                         {product.category} / {product.material}
                     </h4>
-                    <h2 className="item-card-title">{product.title}</h2>
-
                     <div className="rating-stars">
                         <span>★★★★★</span> 
                     </div>
-
+                    <h2 className="item-card-title">{product.title}</h2>
                     <h3 className="price-large">€ {product.price}</h3>
 
                     <StateComponent/>
@@ -69,8 +67,8 @@ function ItemDetailContainer() {
                     <hr />
 
                     <p className="detail-description">{product.description}</p>
-                    <p>
-                        <img className='eu-flag' src="/imgs/EU_icon.png" alt="European Union flag" style={{ width: '24px', height: '24px', marginLeft: '10px' }}/>
+                    <p className='origin-message' >
+                        <img className='eu-flag' src="/imgs/EU_icon.png" alt="European Union flag"/>
                         Made in EU 
                     </p>
 

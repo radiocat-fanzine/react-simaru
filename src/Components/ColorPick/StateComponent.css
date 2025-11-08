@@ -1,27 +1,46 @@
 .box-container {
-    text-align: center;
-    border: 1px solid var(--clr-border);
-    border-radius: var(--radius);
-    padding: 12px;
-    margin-bottom: 10px;
-    margin-top: 0.5rem;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    padding: 1em;
+    margin-bottom: .2rem;
+    margin-top: 0.2rem;
+    margin-left: auto;
+    margin-right: auto;
     background-color: var(--clr-bg-alt);
+}
+
+.box-container hr{
+    border: none;
+    height: 1px;
+    background-color: var(--clr-border);
+    width: 100%;
+    margin: 0.5rem 0;
 }
 
 .color-picker-container {
     display: flex;
+    width: 10.5rem;
     justify-content: center;
     gap: 0.5rem;
     align-items: center;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
 }
 
 .color-button {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
+    width: auto;
+    flex-grow: 1;
+    aspect-ratio: 1 / 1;
+    border-radius: 50% !important;
     padding: 0;
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    max-width: 5rem;
+    max-height: 5rem;
     border: .125rem solid var(--clr-bg-alt); 
     box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.2);
     transition: transform 0.2s;

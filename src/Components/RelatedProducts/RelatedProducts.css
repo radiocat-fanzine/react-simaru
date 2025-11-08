@@ -16,12 +16,23 @@
 .carousel-wrapper {
     display: flex;
     justify-content: space-around;
+    width: 100%; 
+    padding: 0 5%;
     gap: 1.5rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: scroll; 
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.carousel-wrapper::-webkit-scrollbar {
+    display: none;
 }
 
 .related-item-card {
     width: 200px;
+    flex-shrink: 0;
     text-align: center;
     padding: 1rem;
     background-color: var(--clr-bg-alt);

@@ -2,14 +2,26 @@
   --clr-bg: #f9f9fb;
   --clr-bg-alt: #ffffff;
   --clr-text: #1c1d1d;
-  --clr-primary: #82be5e;        
+  --clr-primary: #82be5e;
+  --clr-primary-rgb: 76, 175, 80;        
   --clr-primary-dark: #4c7a3f;
   --clr-accent: #f2c53d;
   --clr-accent-rgb: 242, 197, 61;        
   --clr-border: #e5e5e5;        
   --clr-error: #ba4444;
 
-  --radius: 0.75rem;
+  --clr-sec-bg: transparent; 
+  --clr-sec-text: var(--clr-primary);
+  --clr-sec-border: var(--clr-primary);
+    
+  --clr-sec-hover-bg: var(--clr-primary);
+  --clr-sec-hover-text: var(--clr-bg-alt);
+
+  --clr-danger: #D32F2F;
+  --clr-danger-dark: #C62828;
+  --clr-danger-rgb: 211, 47, 47;
+
+  --radius: 0.25rem;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   --transition: all 0.25s ease-in-out;
 }
@@ -35,16 +47,53 @@ body {
 
 button {
   cursor: pointer;
-  border: none;
+  border: 1px solid transparent;
   border-radius: var(--radius);
-  background-color: var(--clr-primary);
-  color: var(--clr-bg-alt);
   padding: 0.6rem 1.2rem;
   font-weight: bold;
   transition: var(--transition);
 }
-button:hover {
+
+.btn-primary {
+  background-color: var(--clr-primary);
+  color: var(--clr-bg-alt);
+  border-color: var(--clr-primary); 
+}
+
+.btn-primary:hover {
   background-color: var(--clr-primary-dark);
+  border-color: var(--clr-primary-dark);
+}
+
+.btn-secondary {
+  background-color: transparent; 
+  color: var(--clr-primary);      
+  border-color: var(--clr-primary); 
+}
+
+.btn-secondary:hover {
+  background-color: rgba(var(--clr-primary-rgb), 0.2); 
+  color: var(--clr-primary-dark);           
+}
+
+.btn-danger {
+  background-color: var(--clr-danger);
+  color: var(--clr-bg-alt);
+  border: 1px solid var(--clr-danger);
+}
+.btn-danger:hover {
+  background-color: var(--clr-danger-dark);
+  border-color: var(--clr-danger-dark);
+}
+
+.btn-danger-outline {
+  background-color: transparent;
+  color: var(--clr-danger);
+  border: 1px solid var(--clr-danger);
+}
+.btn-danger-outline:hover {
+  background-color: var(--clr-danger);
+  color: var(--clr-bg-alt);
 }
 
 input, textarea {
