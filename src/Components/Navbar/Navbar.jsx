@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import CartWidget from "../CartWidget/CartWidget";
+import { Search } from "lucide-react";
 import "./Navbar.css";
 
 function NavBar() {
@@ -25,7 +26,7 @@ function NavBar() {
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
               <button className="search-icon-button" aria-label="Search">
-                <i className="fa fa-search"></i>
+                <Search size={22} />
               </button>
             </div>
           </div>
@@ -33,7 +34,7 @@ function NavBar() {
           <Link to="/cart" className="nav-cart">
             <CartWidget />
           </Link>
-          
+
         </div>
 
       </div>
