@@ -1,8 +1,10 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import StateComponent from "../ColorPick/StateComponent";
 import './Item.css'
 
 function Item ( {id, title, imgURL, price}) {
+
+    const correctedImgURL = '/' + imgURL;
 
     return (
         <div className="item-card">
@@ -10,7 +12,7 @@ function Item ( {id, title, imgURL, price}) {
             <img 
             className="item-card-img"
             height= "300"
-            src= {imgURL}
+            src= {correctedImgURL}
             alt= {title}
             />
 

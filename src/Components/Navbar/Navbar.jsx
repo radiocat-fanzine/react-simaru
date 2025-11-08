@@ -14,12 +14,12 @@ function NavBar() {
 
   return (
     <nav className="nav-menu">
-      
+
       <Banner />
 
       <div className="navbar-top-row">
         <Link to="/" className="nav-logo">
-        <img className="logo-image" src="./imgs/logo.png" alt="Simaru Logo" />
+        <img className="logo-image" src="/imgs/logo.png" alt="Simaru Logo" />
         </Link>
 
         <div className="nav-right-group">

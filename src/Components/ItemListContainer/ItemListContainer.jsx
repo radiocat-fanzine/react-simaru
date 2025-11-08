@@ -2,7 +2,7 @@ import { SearchContext } from "../../context/SearchContext";
 import Item from "../Item/Item";
 import { getProducts, getProductsByCateg } from "../../data/firebase";
 import { useContext, useState, useEffect } from "react"; 
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import './ItemListContainer.css';
 
 // Funcion para definir estructura del item card para tienda virtual
@@ -14,7 +14,7 @@ export default function ItemListContainer( props ) {
     const { searchQuery } = useContext(SearchContext);
 
     useEffect( () => {
-        setIsLoading(true)
+        setIsLoading(true);
 
         if (categParam){
             getProductsByCateg(categParam)
@@ -36,7 +36,6 @@ export default function ItemListContainer( props ) {
                 setIsLoading(false)
             })
         }
-    
     }, [ categParam ]);
 
     //Filtro de busqueda en tiempo real

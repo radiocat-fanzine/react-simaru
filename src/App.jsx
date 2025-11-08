@@ -2,7 +2,7 @@ import './App.css'
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer'
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
 import NavBar from './Components/Navbar/Navbar'
-import { BrowserRouter, Routes, Route } from 'react-router'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CartProvider } from './context/CartContext'
 import { SearchProvider } from './context/SearchContext'
 import CartContainer from './Components/CartContainer/CartContainer'
@@ -11,6 +11,7 @@ import CartContainer from './Components/CartContainer/CartContainer'
 export default function App() {
 
   return (
+
     <CartProvider>
       <SearchProvider>
         <BrowserRouter>
@@ -24,7 +25,7 @@ export default function App() {
           </Routes>
         </BrowserRouter>
       </SearchProvider>
-    </CartProvider>
+    </CartProvider> 
   )
 }
 

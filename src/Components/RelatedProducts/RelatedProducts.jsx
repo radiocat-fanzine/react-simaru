@@ -9,12 +9,13 @@ const RelatedItemCard = ({ product }) => {
     const { addToCart } = useContext(CartContext);
 
     const linkPath = `/detail/${product.id}`; 
+    const correctedImgURL = '/' + product.imgURL;
     
     // Retorno de elementos con WindowScrollTo para mejorar la navegacion
     return (
         <div className="related-item-card">
             <Link to={linkPath} onClick={() => window.scrollTo(0, 0)}> {/* Agregamos scrollTo para ir arriba */}
-                <img src={product.imgURL} alt={product.title} className="related-img" />
+                <img src={correctedImgURL} alt={product.title} className="related-img" />
             </Link>
             <div className="card-info">
                 <Link to={linkPath} onClick={() => window.scrollTo(0, 0)}>

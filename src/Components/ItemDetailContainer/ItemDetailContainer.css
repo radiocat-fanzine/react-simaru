@@ -27,7 +27,7 @@
     max-height: 800px;
     object-fit: contain;
     border-radius: var(--radius);
-}
+    }
 
 .detail-info-column {
     flex: 1;
@@ -75,3 +75,12 @@
     font-size: '1.1rem';
     margin-top: '0.5rem';
 }
+
+.eu-flag{
+    width: 24px;
+    height: 24px;
+}
+
+
+
+

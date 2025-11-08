@@ -4,7 +4,7 @@ import { useParams } from "react-router"
 import { getProductById } from "../../data/firebase";
 import { useEffect, useState, useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import { Star, Clock, Truck, RefreshCw, ShieldCheck } from 'lucide-react';
+import { Clock, Truck, RefreshCw, ShieldCheck } from 'lucide-react';
 import './ItemDetailContainer.css';
 
 const SERVICE_MESSAGES = [
@@ -33,6 +33,8 @@ function ItemDetailContainer() {
         return <p>Loading products ...</p>
     }
 
+    const correctedImgURL = '/' + product.imgURL;
+
     // Retorna estructura de Item Detail Container con State Component incrustado + Componente Carrusel de sugerencias (Related Products)
     return (
 
@@ -42,7 +44,7 @@ function ItemDetailContainer() {
                 <div className="detail-image-column">
                     <img 
                         className="detail-main-img"
-                        src= {product.imgURL}
+                        src= {correctedImgURL}
                         alt= {product.title}
                     />
                 </div>
@@ -62,13 +64,13 @@ function ItemDetailContainer() {
 
                     <StateComponent/>
 
-                    <button className="add-to-cart-btn" onClick={ () => addToCart(product)}>Add to Cart</button>
+                    <button className="add-to-cart-btn" onClick={ () => addToCart(product)}> Add to Cart </button>
 
                     <hr />
 
                     <p className="detail-description">{product.description}</p>
                     <p>
-                        <img src="/EU_icon.png" alt="European Union flag" style={{ width: '24px', height: '24px', marginLeft: '10px' }}/>
+                        <img className='eu-flag' src="/imgs/EU_icon.png" alt="European Union flag" style={{ width: '24px', height: '24px', marginLeft: '10px' }}/>
                         Made in EU 
                     </p>
 
