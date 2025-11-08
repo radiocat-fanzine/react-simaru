@@ -23,7 +23,7 @@ export async function getProducts() {
   const documents = productsSnapshot.docs;
 
   const dataDocs = documents.map ( item => {
-    return {id: item, ...item.data()}
+    return {id: item.id, ...item.data()}
   })
 
   return dataDocs

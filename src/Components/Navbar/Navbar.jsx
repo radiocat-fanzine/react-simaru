@@ -1,46 +1,21 @@
-import { useContext, useState, useEffect } from "react";
+import Banner from "../Banner/Banner";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import CartWidget from "../CartWidget/CartWidget";
-import { Search, User, Heart,ChevronDown } from "lucide-react";
+import { Search, User, Heart } from "lucide-react";
 import "./Navbar.css";
 
 //Estructura de Nav Bar con triple fila > 
-//(Banner de anuncios. Barra Logo + Search Input + Cart. Barra Categorias.) 
+//(Banner de anuncios. Barra Principal. Barra Categorias.) 
 
 function NavBar() {
   const { searchQuery, setSearchQuery } = useContext(SearchContext);
 
-  //Rotacion de mensajes en Banner - Array de mensajes
-  const [announcementIndex, setAnnouncementIndex] = useState(0);
-    const messages_en = [
-    "✨ New Collection Drop! Get Up to 35% OFF on selected items.",
-    "FREE SHIPPING on all orders over €75!",
-    "Pay in interest-free installments! 💳 Explore flexible payment options."
-  ];
-  
-  useEffect(() => {
-        const interval = setInterval(() => {
-            setAnnouncementIndex(prevIndex => (prevIndex + 1) % messages.length);
-        }, 5000);
-        return () => clearInterval(interval);
-    }, [messages_en]);
-
   return (
     <nav className="nav-menu">
-      <div className="announcement-bar">
-                <div className="announcement-content">
-                    {messages_en[announcementIndex]}
-                </div>
-                <div className="announcement-utilities">
-                    <div className="utility-selector"> 
-                        € EUR <ChevronDown size={14} />
-                    </div> 
-                    <div className="utility-selector">
-                        🇬🇧 EN <ChevronDown size={14} />
-                    </div> 
-                </div>
-            </div>
+      
+      <Banner />
 
       <div className="navbar-top-row">
         <Link to="/" className="nav-logo">
