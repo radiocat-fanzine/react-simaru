@@ -75,4 +75,26 @@ export async function exportProductsData(){
     }
 }
 
+//Funcion para carrusel de sugerencias (ItemDetailContainer)
+
+export async function getRelatedProducts(currentProductId, limit = 4) {
+    const productsRef = collection(db, "products");
+
+    const productsSnapshot = await getDocs(productsRef);
+    const documents = productsSnapshot.docs;
+    
+    const allProducts = documents.map(item => ({
+        id: item.id,
+        ...item.data()
+    }));
+
+    const filteredProducts = allProducts.filter(p => p.id !== currentProductId);
+    for (let i = filteredProducts.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [filteredProducts[i], filteredProducts[j]] = [filteredProducts[j], filteredProducts[i]];
+    }
+
+    return filteredProducts.slice(0, limit);
+}
+
 export default app;
