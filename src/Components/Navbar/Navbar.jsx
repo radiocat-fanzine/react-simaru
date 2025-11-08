@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import CartWidget from "../CartWidget/CartWidget";
@@ -11,26 +11,26 @@ import "./Navbar.css";
 function NavBar() {
   const { searchQuery, setSearchQuery } = useContext(SearchContext);
 
-  //Rotacion de mensajes en Banner
+  //Rotacion de mensajes en Banner - Array de mensajes
   const [announcementIndex, setAnnouncementIndex] = useState(0);
-    const messages = [
-        "✨ ¡Nueva Colección! Hasta 35% OFF en artículos seleccionados.",
-        "¡ENVÍO GRATIS en pedidos de más de 75€!",
-        "¡Paga a plazos sin intereses! 💳 Descubre nuestras opciones."
-    ];
+    const messages_en = [
+    "✨ New Collection Drop! Get Up to 35% OFF on selected items.",
+    "FREE SHIPPING on all orders over €75!",
+    "Pay in interest-free installments! 💳 Explore flexible payment options."
+  ];
   
   useEffect(() => {
         const interval = setInterval(() => {
             setAnnouncementIndex(prevIndex => (prevIndex + 1) % messages.length);
         }, 5000);
         return () => clearInterval(interval);
-    }, []);
+    }, [messages_en]);
 
   return (
     <nav className="nav-menu">
       <div className="announcement-bar">
                 <div className="announcement-content">
-                    {messages[announcementIndex]}
+                    {messages_en[announcementIndex]}
                 </div>
                 <div className="announcement-utilities">
                     <div className="utility-selector"> 
