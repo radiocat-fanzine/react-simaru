@@ -24,7 +24,7 @@ export default function Banner() {
     return (
         <div className="announcement-bar">
             <div className="announcement-content">
-                {MESSAGES_EN[announcementIndex]}
+                {messages_en[announcementIndex]}
             </div>
             
             <div className="announcement-utilities">
