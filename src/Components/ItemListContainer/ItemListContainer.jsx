@@ -55,15 +55,18 @@ export default function ItemListContainer( props ) {
             <h2>{props.children}</h2>
 
             { isLoading
-                ? <p className="item-list-container__loading">Loading...</p>
-                : ""
+                ? ( 
+                    <p className="item-list-container__loading">Loading...</p>
+                ) : (
+                    <div className="item-list" >
+                        {filteredProducts.length > 0 ? (
+                            filteredProducts.map (item => <Item key= { item.id } {...item} /> )
+                        ) : (
+                            <p className="no-results">No products found.</p>
+                        )}
+                    </div>
+                )
             }
-            <div className="item-list" >
-            {filteredProducts.length > 0 ? (
-                filteredProducts.map (item => <Item key= { item.id } {...item} /> )
-            ):(<p className="no-results">No products found.</p>
-            )}
-            </div>
         </div>
-    )
+    );
 }
