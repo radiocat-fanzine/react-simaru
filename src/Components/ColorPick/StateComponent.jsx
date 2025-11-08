@@ -13,7 +13,6 @@ export default function StateComponent (){
     return (
         <div className="box-container">
             <p>Choose Your Hue:
-                <span className="color-preview" style={{backgroundColor: color}}></span>
             </p>
             <div className="color-picker-container">
                 <button className="color-button" 
