@@ -16,22 +16,28 @@
     margin: 5px;
     transition: var(--transition);
 }
+
 .color-preview:hover {
     transform: scale(1.1);
     border-color: var(--clr-primary);
 }
 
-.button-container {
-    margin-top: 0.5rem;
+.color-picker-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
 }
 
-.button {
-    background-color: var(--clr-primary);
-    color: var(--clr-bg-alt);
-    border-radius: var(--radius);
-    padding: 0.3rem 0.8rem;
-    transition: var(--transition);
+.color-button {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    padding: 0;
+    border: .125rem solid var(--clr-bg-alt); 
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
 }
-.button:hover {
-    background-color: var(--clr-primary-dark);
+
+.color-button:hover {
+    transform: scale(1.1);
 }

@@ -1,18 +1,33 @@
 import { useState } from "react";
 import './StateComponent.css';
 
+const COLORS = {
+    BEIGE: '#F5F5DC',     
+    BROWN: '#4E342E',      
+    BLACK: '#1C1D1D'
+};
+
 export default function StateComponent (){
-    const [ color, setColor ] = useState("#000000");
+    const [ color, setColor ] = useState(COLORS.BEIGE);
     
     return (
         <div className="box-container">
-            <p>Select your color:
+            <p>Choose Your Hue:
                 <span className="color-preview" style={{backgroundColor: color}}></span>
             </p>
-            <div className="button-container">
-                <button className="button" onClick={ () => setColor("#000000")}>black</button>
-                <button className="button" onClick={ () => setColor("#4ec72fff")}>green</button>
-                <button className="button" onClick={ () => setColor("#d49c00ff")}>orange</button>
+            <div className="color-picker-container">
+                <button className="color-button" 
+                    style={{ backgroundColor: COLORS.BLACK }}
+                    onClick={ () => setColor(COLORS.BLACK)}
+                    aria-label="Select color black"></button>
+                <button className="color-button" 
+                    style={{ backgroundColor: COLORS.BROWN }}
+                    onClick={ () => setColor(COLORS.BROWN)}
+                    aria-label="Select color brown"></button>
+                <button className="color-button" 
+                    style={{ backgroundColor: COLORS.BEIGE }}
+                    onClick={ () => setColor(COLORS.BEIGE)}
+                    aria-label="Select color beige"></button>
             </div>
         </div>
     )

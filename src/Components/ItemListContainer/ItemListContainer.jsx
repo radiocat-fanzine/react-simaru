@@ -28,8 +28,9 @@ export default function ItemListContainer( props ) {
                 setProducts(productList);
             })
             .catch ( (error) => {
-                console.log(error);
-                alert("Something went wrong while looking for products :(")
+                console.error("Firebase Error:",error);
+                setProducts([]);
+                alert("Something went wrong while looking for products :(");
             })
             .finally( () => {
                 setIsLoading(false)
