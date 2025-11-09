@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import { toast } from 'react-toastify';
 
 //Creacion del contexto del cart
 
@@ -31,11 +32,18 @@ export function CartProvider(props) {
                     : item
             );
             setCartItems(updatedCart);
+
+            toast.success(`+1 added to cart: ${newItem.title}`, {
+                style: { backgroundColor: '#4CAF50', color: 'white' },
+            });
+
         } else {
             setCartItems([...cartItems, { ...newItem, count: 1 }]);
-        }
-        alert(`You successfully added ${newItem.title} to your cart`);
+            toast.info(`Item added to cart: ${newItem.title}`, {
+                style: { backgroundColor: '#2196F3', color: 'white' },
+        });
     }
+}
 
     //Funcion para quitar una unidad de un producto (o eliminar si queda 1)
     function removeItem(idRemove) {
@@ -55,7 +63,6 @@ export function CartProvider(props) {
         setCartItems(newCartItems);
     }
 }
-
 
     //Funcion para eliminar un producto completamente del carrito de compra
     function removeItemComplete(idRemove){

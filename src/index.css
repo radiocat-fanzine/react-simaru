@@ -24,6 +24,9 @@
   --radius: 0.25rem;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   --transition: all 0.25s ease-in-out;
+
+  --font-size-small: 0.875rem;
+  --font-size-base: 1rem;
 }
 
 html {
@@ -125,12 +128,13 @@ hr {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 4px;
+  height: 12px;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--clr-primary);
-  border-radius: 10px;
+  background: var(--clr-border);
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--clr-primary-dark);
+  background: var(--clr-border);
 }

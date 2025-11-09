@@ -1,0 +1,114 @@
+.wishlist-view {
+    max-width: 75rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.wishlist-header {
+    margin-bottom: 2rem;
+}
+
+.wishlist-main-title {
+    font-size: 2.5rem;
+    color: var(--clr-primary);
+    margin-bottom: 0.5rem;
+}
+
+.wishlist-subtitle {
+    font-size: 1.1rem;
+    color: var(--clr-text-muted);
+}
+
+.wishlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.wishlist-item-card {
+    position: relative;
+    border: 1px solid var(--clr-border, #ddd);
+    border-radius: var(--radius);
+    padding: 0.75rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.wishlist-item-card:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: var(--shadow-md);
+}
+
+.wishlist-img {
+    width: 100%;
+    height: 10rem;
+    object-fit: contain;
+    border-radius: var(--radius);
+    margin-bottom: 0.5rem;
+}
+
+.wishlist-remove-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--clr-danger, #e74c3c);
+    padding: 0.3rem;
+    z-index: 10;
+    line-height: 1;
+}
+
+.wishlist-remove-btn:hover {
+    transform: scale(1.1);
+}
+
+.wishlist-add-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.4rem 0.6rem;
+    background-color: var(--clr-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    margin-top: 0.5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.empty-layout-wrapper {
+    display: flex; 
+    gap: 3rem;
+    align-items: center; 
+    max-width: 60rem;
+    margin: 3rem auto;
+    padding: 2rem;
+    border: 1px solid var(--clr-border, #ddd); 
+    border-radius: var(--radius);
+}
+
+.empty-media-column {
+    flex: 1;
+    min-width: 20rem; 
+}
+
+.wishlist-empty-state {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0; 
+    border: none;
+}
+
+.empty-icon {
+    color: var(--clr-primary);
+    margin-bottom: 1rem;
+}

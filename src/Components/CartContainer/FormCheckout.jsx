@@ -8,7 +8,9 @@ export default function FormCheckout(props) {
     const [formData, setFormData] = useState({
         username: "",
         phone: "",
-        email: ""
+        email: "",
+        address: "", 
+        country: "",
     });
 
     const [submitted, setSubmitted] = useState(false);
@@ -75,16 +77,32 @@ export default function FormCheckout(props) {
             required
             />
 
-            <div className="form-buttons">
-            <button type="submit">Enviar</button>
-            <button type="button" onClick={resetForm}> Clear Form </button>
-            </div>
+            <label htmlFor="address">Shipping Address</label>
+            <input
+            id="address"
+            name="address"
+            type="text"
+            placeholder="Street, number, apt"
+            value={formData.address}
+            onChange={handleInputChange}
+            required
+            />
 
-            {submitted && (
-            <p className="success-message">
-                Payment Successful!
-            </p>
-            )}
+            <label htmlFor="country">Country</label>
+            <input
+            id="country"
+            name="country"
+            type="text"
+            placeholder="e.g., Spain, Germany"
+            value={formData.country}
+            onChange={handleInputChange}
+            required
+            />
+
+            <div className="form-buttons">
+            <button type="submit" className="btn-primary">Place Order</button>
+            <button type="button" onClick={resetForm}className="btn-secondary-outline"> Clear Form </button>
+            </div>
         </form>
         </div>
     );

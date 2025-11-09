@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { getRelatedProducts } from '../../data/firebase';
 import { CartContext } from '../../context/CartContext';
 import './RelatedProducts.css'; 

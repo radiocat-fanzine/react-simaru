@@ -4,7 +4,9 @@ import { useParams } from "react-router"
 import { getProductById } from "../../data/firebase";
 import { useEffect, useState, useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import { Clock, Truck, RefreshCw, ShieldCheck } from 'lucide-react';
+import { Clock, Truck, RefreshCw, ShieldCheck, Heart } from 'lucide-react';
+import { ToastContainer, toast } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css';
 import './ItemDetailContainer.css';
 
 const SERVICE_MESSAGES = [
@@ -20,12 +22,36 @@ function ItemDetailContainer() {
     const { idParam } = useParams();
     const [product, setProduct] = useState( {loading: true} );
     const { addToCart} = useContext(CartContext);
+    const [isInWishlist, setIsInWishlist] = useState(false);
 
     useEffect ( () => {
         getProductById(idParam)
         .then( response => setProduct(response))
         .catch( error => alert(error))
     }, [])
+
+    //Función para alternar el estado (Wishlist) y mostrar la notificación
+    const toggleWishlist = () => {
+        setIsInWishlist(!isInWishlist);
+
+        const newStatus = !isInWishlist;
+        const message = newStatus 
+            ? `❤️ "${product.title}" added to your Wishlist!`
+            : `💔 "${product.title}" removed from your Wishlist.`;
+        
+        // Llama a Toastify
+        toast.success(message, {
+            position: "bottom-right",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            style: { backgroundColor: '#FF69B4', color: 'white' } 
+        });
+    };
 
     // If con early return para condicionar la visibilidad del item card a su disponibilidad
     
@@ -35,11 +61,21 @@ function ItemDetailContainer() {
 
     const correctedImgURL = '/' + product.imgURL;
 
-    // Retorna estructura de Item Detail Container con State Component incrustado + Componente Carrusel de sugerencias (Related Products)
+    // Retorna estructura del Item Detallado + Componente Carrusel de sugerencias (Related Products)
     return (
-
         <div className="item-detail-view">
+            <ToastContainer />
             <div className="detail-content-wrapper">
+
+                <div className="wishlist-icon-container" onClick={toggleWishlist}>
+                    <Heart 
+                        size={32} 
+                        className="wishlist-icon" 
+                        // Rellena si está en la lista de deseos
+                        fill={isInWishlist ? '#FF69B4' : 'none'} 
+                        stroke={isInWishlist ? '#FF69B4' : 'currentColor'}
+                    />
+                </div>
 
                 <div className="detail-image-column">
                     <img 
@@ -66,21 +102,24 @@ function ItemDetailContainer() {
 
                     <hr />
 
-                    <p className="detail-description">{product.description}</p>
-                    <p className='origin-message' >
-                        <img className='eu-flag' src="/imgs/EU_icon.png" alt="European Union flag"/>
-                        Made in EU 
-                    </p>
+                    <div className="detail-scrollable-content">
+                        <p className="detail-description">{product.description}</p>
+                        <p className='origin-message' >
+                            <img className='eu-flag' src="/imgs/EU_icon.png" alt="European Union flag"/>
+                            Made in EU 
+                        </p>
 
-                    <div className="detail-origin-service">
-                        <ul className="service-messages">
-                            {SERVICE_MESSAGES.map((msg, index) => (
-                                <li key={index}>
-                                    {msg.icon}
-                                    {msg.text}
-                                </li>
-                            ))}
-                        </ul>
+                        <div className="detail-origin-service">
+                            <ul className="service-messages">
+                                {SERVICE_MESSAGES.map((msg, index) => (
+                                    <li key={index}>
+                                        {msg.icon}
+                                        {msg.text}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
                     </div>
 
                 </div>

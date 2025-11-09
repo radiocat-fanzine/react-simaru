@@ -4,13 +4,13 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: #1f1f1d;
+    color: var(--clr-text);
     background-color: transparent;
     transition: transform 0.25s ease, color 0.25s ease;
 }
 
 .cart-widget:hover {
-    color: #4c7a3f;
+    color: var(--clr-primary-dark);
     transform: scale(1.05);
 }
 
@@ -18,8 +18,8 @@
     position: absolute;
     top: -8px;
     right: -10px;
-    background-color: #82be5e; 
-    color: #fffaf2; 
+    background-color: var(--clr-primary); 
+    color: var(--clr-bg); 
     font-size: 12px;
     font-weight: 600;
     padding: 3px 7px;
@@ -29,7 +29,7 @@
 }
 
 .cart-widget:focus-visible {
-    outline: 2px solid #f2c53d; 
+    outline: 2px solid var(--clr-accent); 
     outline-offset: 4px;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .cart-widget:hover .cart-count {
-    background-color: #f2c53d; 
+    background-color: var(--clr-accent); 
     transform: scale(1.1);
 }
 
