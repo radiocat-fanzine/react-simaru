@@ -9,7 +9,7 @@ export default function UserProfile() {
     //Login simulado
     const { isLoggedIn, logout, userPhotoURL } = useAuth();
 
-    //Datos del usuario simulado
+    //Datos del usuario Modelo para autollenado
 
     const userData = {
         username: "@margarita_silvestre",

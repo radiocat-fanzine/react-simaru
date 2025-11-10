@@ -1,8 +1,16 @@
 import { useState } from "react";
 import './CartContainer.css';
 
-//Simulacion de pago, formulario de ingreso de datos de envio + confirmacion de envio
+//Datos de Usuario Modelo para autollenado
+const SIMULATED_USER_DATA = {
+    username: "Margarita Silva",
+    phone: "+491715551234", // Ejemplo de número de teléfono
+    email: "margarita.silvestre@mail.com",
+    address: "Am Waldrand 12", 
+    country: "Germany",
+};
 
+//Simulacion de pago, formulario de ingreso de datos de envio + confirmacion de envio
 export default function FormCheckout(props) {
 
     const [formData, setFormData] = useState({
@@ -26,13 +34,30 @@ export default function FormCheckout(props) {
         setFormData(prev => ({ ...prev, [name]: value }));
     }
 
-    function resetForm() {
-        setFormData({
-        username: "",
-        phone: "",
-        email: ""
-        });
+    function fillOrResetForm() {
+        // Verifica si el formulario está vacío
+        if (formData.username === "" && formData.email === "") {
+            // Autocompleta con los datos simulados
+            setFormData(SIMULATED_USER_DATA);
+        } else {
+            // Si tiene datos, se reinicia
+            setFormData({
+                username: "",
+                phone: "",
+                email: "",
+                address: "", 
+                country: "",
+            });
+        }
         setSubmitted(false);
+    }
+
+    // Función para autollenar al hacer clic en el campo
+    const handleAutofillClick = (e) => {
+        // Solo autollenar si el campo de usuario está vacío
+        if (formData.username === "" && e.target.name === "username") {
+            setFormData(SIMULATED_USER_DATA);
+        }
     }
 
     return (
@@ -48,6 +73,7 @@ export default function FormCheckout(props) {
             placeholder="Enter your legal name (first and last)"
             value={formData.username}
             onChange={handleInputChange}
+            onClick={handleAutofillClick}
             required
             />
 
@@ -57,10 +83,11 @@ export default function FormCheckout(props) {
             name="email"
             type="email"
             placeholder="you@example.com"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}"
             title="Please enter a valid email address."
             value={formData.email}
             onChange={handleInputChange}
+            onClick={handleAutofillClick}
             required
             />
 
@@ -70,10 +97,11 @@ export default function FormCheckout(props) {
             name="phone"
             type="tel"
             placeholder="+49 1XX XXXX XXX"
-            pattern="[0-9]{6,15}"
+            pattern="\+?[0-9]{6,15}"
             title="Phone number must be between 6 and 15 digits (numbers only)."
             value={formData.phone}
             onChange={handleInputChange}
+            onClick={handleAutofillClick}
             required
             />
 
@@ -85,6 +113,7 @@ export default function FormCheckout(props) {
             placeholder="Street, number, apt"
             value={formData.address}
             onChange={handleInputChange}
+            onClick={handleAutofillClick}
             required
             />
 
@@ -96,12 +125,14 @@ export default function FormCheckout(props) {
             placeholder="e.g., Spain, Germany"
             value={formData.country}
             onChange={handleInputChange}
+            onClick={handleAutofillClick}
             required
             />
 
             <div className="form-buttons">
             <button type="submit" className="btn-primary">Place Order</button>
-            <button type="button" onClick={resetForm}className="btn-secondary-outline"> Clear Form </button>
+            <button type="button" onClick={fillOrResetForm}className="btn-secondary-outline"> 
+                {formData.username === "" ? 'Autofill Data' : 'Clear Form'} </button>
             </div>
         </form>
         </div>
