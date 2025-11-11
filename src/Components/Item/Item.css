@@ -13,6 +13,7 @@
   text-align: center;
   gap: 0.25rem;
   transition: var(--transition);
+  flex-grow: 1;
 }
 .item-card:hover {
   transform: translateY(-3px);
@@ -55,23 +56,42 @@
   padding: 0.5rem 1rem;
   border-radius: var(--radius);
   transition: var(--transition);
+  min-height: auto;
+  line-height: normal;
+}
+
+.item-card-actions button {
+    font-size: 1rem;
+    font-weight: 600; 
+    padding: 0.5rem 1rem;
+    min-height: 40px; 
+    line-height: normal; /* Ayuda a centrar el texto dentro del botón */
+    margin: 0
 }
 
 .item-card-actions {
   display: flex;
+  align-items: center;
   justify-content: space-between; 
   gap: 0.5rem; 
   width: 100%; 
   padding: 0 0 0.5rem 0; 
 }
 
+
 .item-card-actions .flex-item {
-    flex-grow: 1;
+  flex-grow: 1;
+}
+
+.see-more-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .see-more-link button {
-    width: 100%; 
-    margin: 0; 
+  width: 100%; 
+  margin: 0; 
 }
 
 .see-more-btn {
