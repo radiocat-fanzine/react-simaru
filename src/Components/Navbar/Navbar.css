@@ -36,7 +36,6 @@
     width: auto;
     object-fit: contain;
     display: block;
-    flex-shrink: 0;
 }
 
 
