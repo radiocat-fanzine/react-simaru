@@ -50,13 +50,12 @@
 /* 🔒 imagen completamente controlada */
 .logo-image {
     display: block;
-    height: 100%;
+    max-height: 32px;
+    height: auto !important;
     width: auto !important;
-    max-width: 100% !important;
+    max-width: none !important;
     object-fit: contain;
 }
-
-
 
 .navbar-tagline-container {
     flex-grow: 1; 
