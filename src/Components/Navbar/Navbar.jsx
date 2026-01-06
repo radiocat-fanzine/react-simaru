@@ -28,8 +28,14 @@ function NavBar() {
       <Banner />
 
       <div className="navbar-top-row">
-        <Link to="/" className="nav-logo"> 
-          <img className="logo-image" src="/imgs/logo.png" alt="Simaru Logo" />
+        <Link to="/" className="nav-logo-container">
+          <span className="logo-wrapper">
+            <img
+              className="logo-image"
+              src="/imgs/logo.png"
+              alt="Simaru Logo"
+            />
+          </span>
         </Link>
 
         <div className="navbar-tagline-container">
